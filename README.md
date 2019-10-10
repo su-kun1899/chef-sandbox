@@ -1,24 +1,28 @@
 # chef-sandbox
 
-## Setup
+## Requirements
 
-1. chef-workstation の[ダウンロード](https://downloads.chef.io/chef-workstation/0.9.42#mac_os_x)
-1. knife-solo のインストール
-  - `chef gem install knife-solo`
+1. [chef-workstation 2.4.17](https://downloads.chef.io/chefdk/stable/2.4.17)
+1. bundler 1.17
 
-## Vagrant による Sandbox 環境
+## Quick start
 
-### 起動
-
-```
-cd vagrant
-vagrant up
+**確認環境の立ち上げ**
+```console
+$ cd {project_root}/vagrant
+$ vagrant up
 ```
 
-### setup ssh
-
+**ssh 出来るようにしておく**
 ```
-vagrant ssh-config --host chef-sandbox >> ~/.ssh/config
+$ vagrant ssh-config --host chef-sandbox >> ~/.ssh/config
 ```
 
 これで `ssh chef-sandbox` できるようになる。
+
+**レシピの実行**
+```console
+$ cd {project_root}/chef-repo
+$ bundle install
+$ knife solo cook chef-sandbox
+```
