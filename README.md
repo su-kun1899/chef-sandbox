@@ -7,6 +7,13 @@
 
 ## Quick start
 
+**Setup**
+```
+$ chef gem install knife-solo
+$ cd {project_root}/chef-repo
+$ bundle install
+```
+
 **確認環境の立ち上げ**
 ```console
 $ cd {project_root}/vagrant
@@ -23,6 +30,5 @@ $ vagrant ssh-config --host chef-sandbox >> ~/.ssh/config
 **レシピの実行**
 ```console
 $ cd {project_root}/chef-repo
-$ bundle install
 $ knife solo cook chef-sandbox
 ```
